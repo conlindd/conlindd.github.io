@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>使用5块钱的随身wifi搭建ChatGpt Web客户端</title>
+      <link href="/2023/05/15/%E4%BD%BF%E7%94%A85%E5%9D%97%E9%92%B1%E7%9A%84%E9%9A%8F%E8%BA%ABwifi%E6%90%AD%E5%BB%BAChatGpt%20Web%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
+      <url>/2023/05/15/%E4%BD%BF%E7%94%A85%E5%9D%97%E9%92%B1%E7%9A%84%E9%9A%8F%E8%BA%ABwifi%E6%90%AD%E5%BB%BAChatGpt%20Web%E5%AE%A2%E6%88%B7%E7%AB%AF/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230515211921745.png" alt="image-20230515211921745"></p><h4 id="1-先有一个随身Wifi-然后刷入Debian系统"><a href="#1-先有一个随身Wifi-然后刷入Debian系统" class="headerlink" title="1.先有一个随身Wifi,然后刷入Debian系统"></a>1.先有一个随身Wifi,然后刷入Debian系统</h4><p>刷入教程请访问酷安,随身wifi话题</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515204444379.png" alt="image-20230515204444379"></p><h4 id="2-在随身wifi上安装1Panel"><a href="#2-在随身wifi上安装1Panel" class="headerlink" title="2.在随身wifi上安装1Panel"></a>2.在随身wifi上安装1Panel</h4><p>1Panel自带Docker,省去Docker的安装,同时它还是Linux管理工具,比宝塔面板轻量,省空间</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">切换到root用户</span><br><span class="line">执行下边代码进行一键安装</span><br><span class="line"></span><br><span class="line">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>安装成功后，控制台日志会提示对应端口号，可通过浏览器访问如下页面登录 1Panel：</p><p>http:&#x2F;&#x2F;目标服务器 IP 地址:目标端口</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515205315488.png" alt="image-20230515205315488"></p><p>可以看到这个自带Docker面板</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515205404390.png" alt="image-20230515205404390"></p><h4 id="3-获取Chatgpt的Key"><a href="#3-获取Chatgpt的Key" class="headerlink" title="3.获取Chatgpt的Key"></a>3.获取Chatgpt的Key</h4><p>访问地址:<a href="https://platform.openai.com/account/api-keys">https://platform.openai.com/account/api-keys</a></p><p>新建一个Key复制下来,一会会用到</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515205605164.png" alt="image-20230515205605164"></p><h4 id="4-使用Docker创建ChatGpt-Web端"><a href="#4-使用Docker创建ChatGpt-Web端" class="headerlink" title="4.使用Docker创建ChatGpt Web端"></a>4.使用Docker创建ChatGpt Web端</h4><h5 id="1、创建docker-compose-yml文件"><a href="#1、创建docker-compose-yml文件" class="headerlink" title="1、创建docker-compose.yml文件"></a>1、<strong>创建docker-compose.yml文件</strong></h5><p>（1）在服务器上创建一个目录：chatgpt_web</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir chatgpt_web &amp;&amp; cd chatgpt_web</span><br><span class="line">并进入该目录</span><br><span class="line">cd chatgpt_web &amp;&amp; cd chatgpt_web</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230515210018827.png" alt="image-20230515210018827"></p><p>（2）创建<a href="https://so.csdn.net/so/search?q=docker-compose&spm=1001.2101.3001.7020">docker-compose</a>.yml文件</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230515210130252.png" alt="image-20230515210130252"></p><p>（3）以下内容填写到docker-compose.yml配置文件中并保存</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: chenzhaoyu94/chatgpt-web:latest</span><br><span class="line">    ports:</span><br><span class="line">      - 3002:3002</span><br><span class="line">    environment:</span><br><span class="line">      # api秘钥</span><br><span class="line">      OPENAI_API_KEY: sk-xxx（修改为自己申请的秘钥）</span><br><span class="line">      # 超时，单位毫秒，可选</span><br><span class="line">      TIMEOUT_MS: 60000</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230515210354309.png" alt="image-20230515210354309"></p><p>保存： 按下Esc,然后输入  :wq  回车</p><p>可以用cat docker-compose.yml 查看是否保存上</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515210436438.png" alt="image-20230515210436438"></p><p>注意：大家在编写yml文件时。要把注释删掉，否则有可能会报错。</p><h4 id="2、部署并启动运行"><a href="#2、部署并启动运行" class="headerlink" title="2、部署并启动运行"></a>2、部署并启动运行</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230515210659850.png" alt="image-20230515210659850"></p><p>当部署好之后执行<code>Docker ps</code> 就能看到启动的容器</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515210727944.png" alt="image-20230515210727944"></p><h5 id="3、登录chatgpt-web页面"><a href="#3、登录chatgpt-web页面" class="headerlink" title="3、登录chatgpt_web页面"></a>3、<strong>登录chatgpt_web页面</strong></h5><p>使用ifconfig命令查看你的随身Wifi的ip地址</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515210853262.png" alt="image-20230515210853262"></p><p>然后用浏览器直接访问</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://服务器ip:8090</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230515211015654.png" alt="image-20230515211015654"></p><p>可以看到随身Wifi还剩余很大的空间</p><p><img src="https://md.walmw.club/markdown/biji/image-20230515211237945.png" alt="image-20230515211237945"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随身wifi </category>
+          
+          <category> ChatGpt </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随身wifi </tag>
+            
+            <tag> ChatGpt </tag>
+            
+            <tag> 1Panel </tag>
+            
+            <tag> Debian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>本站Hexo安装及Butterfly主题美化</title>
       <link href="/2023/05/15/%E6%9C%AC%E7%AB%99Hexo%E5%AE%89%E8%A3%85%E5%8F%8AButterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/"/>
       <url>/2023/05/15/%E6%9C%AC%E7%AB%99Hexo%E5%AE%89%E8%A3%85%E5%8F%8AButterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</url>
