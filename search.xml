@@ -4,9 +4,38 @@
   
     
     <entry>
+      <title>本站Hexo安装及Butterfly主题美化</title>
+      <link href="/2023/05/15/%E6%9C%AC%E7%AB%99Hexo%E5%AE%89%E8%A3%85%E5%8F%8AButterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/"/>
+      <url>/2023/05/15/%E6%9C%AC%E7%AB%99Hexo%E5%AE%89%E8%A3%85%E5%8F%8AButterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-安装部署Hexo"><a href="#1-安装部署Hexo" class="headerlink" title="1.安装部署Hexo"></a>1.安装部署Hexo</h4><p>地址:<a href="https://zhuanlan.zhihu.com/p/552639819">https://zhuanlan.zhihu.com/p/552639819</a></p><h4 id="2-安装Butterfly主题"><a href="#2-安装Butterfly主题" class="headerlink" title="2.安装Butterfly主题"></a>2.安装Butterfly主题</h4><p>地址:<a href="https://butterfly.js.org/posts/21cfbf15/">https://butterfly.js.org/posts/21cfbf15/</a></p><h4 id="3-Butterfly主题美化"><a href="#3-Butterfly主题美化" class="headerlink" title="3.Butterfly主题美化"></a>3.Butterfly主题美化</h4><p>地址:<a href="https://blog.csdn.net/AAbbccdd12345685/article/details/117871129#">https://blog.csdn.net/AAbbccdd12345685/article/details/117871129#</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Butterfly </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>随身wifi的debian系统下SMTP邮箱收取邮件后自动转发</title>
-      <link href="/2023/05/15/1.%E6%B2%B9%E6%9E%90%E7%8C%AB%E7%8B%B8%E5%8E%AE%E9%9A%8F%E8%BA%ABwifi%E7%9A%84debian%E7%B3%BB%E7%BB%9F%E4%B8%8BSMTP%E9%82%AE%E7%AE%B1%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8F%91/"/>
-      <url>/2023/05/15/1.%E6%B2%B9%E6%9E%90%E7%8C%AB%E7%8B%B8%E5%8E%AE%E9%9A%8F%E8%BA%ABwifi%E7%9A%84debian%E7%B3%BB%E7%BB%9F%E4%B8%8BSMTP%E9%82%AE%E7%AE%B1%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8F%91/</url>
+      <link href="/2023/05/15/%E6%B2%B9%E6%9E%90%E7%8C%AB%E7%8B%B8%E5%8E%AE%E9%9A%8F%E8%BA%ABwifi%E7%9A%84debian%E7%B3%BB%E7%BB%9F%E4%B8%8BSMTP%E9%82%AE%E7%AE%B1%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8F%91/"/>
+      <url>/2023/05/15/%E6%B2%B9%E6%9E%90%E7%8C%AB%E7%8B%B8%E5%8E%AE%E9%9A%8F%E8%BA%ABwifi%E7%9A%84debian%E7%B3%BB%E7%BB%9F%E4%B8%8BSMTP%E9%82%AE%E7%AE%B1%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8F%91/</url>
       
         <content type="html"><![CDATA[<h1 id="随身wifi的debian系统下SMTP邮箱收取邮件后自动转发"><a href="#随身wifi的debian系统下SMTP邮箱收取邮件后自动转发" class="headerlink" title="随身wifi的debian系统下SMTP邮箱收取邮件后自动转发"></a>随身wifi的debian系统下SMTP邮箱收取邮件后自动转发</h1><blockquote><h2 id="Excerpt"><a href="#Excerpt" class="headerlink" title="Excerpt"></a>Excerpt</h2><p>代码来源自GITEE@刘骢和GITHUB@TeddyNight</p><p>source: <a href="https://gitee.com/MaoMaoMaster/autoforwarder/tree/master">https://gitee.com/MaoMaoMaster/autoforwarder/tree/master</a><br>author: 油析猫狸厮</p></blockquote><hr><p>README.md</p><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>代码来源自GITEE@刘骢和GITHUB@TeddyNight</p><h3 id="观前需知"><a href="#观前需知" class="headerlink" title="观前需知"></a>观前需知</h3><p>0.请确认你的设备能上网。</p><p>1.在观看本教程前请拥有一定Linux操作基础，本人不回答关于任何linux操作问题。例如新建目录，文件，移动，剪切是什么命令，不知道请打开菜鸟教程进linux板块学习！</p><p>2.请先确保你的硬件支持短信收取（在安卓系统下）,应该不支持电信的CDMA，只支持联通移动的LTE通信，或者可以先用刘骢的脚本测试下。</p><p>3.除此之外请预先换源，防止apt下载卡住，不知道怎么换多搜索学习。</p><p>本文用到的文件：install.sh，smsforwarder，smsforwarder.service</p><h3 id="大致流程，详情请见酷安"><a href="#大致流程，详情请见酷安" class="headerlink" title="大致流程，详情请见酷安"></a>大致流程，详情请见酷安</h3><p>1.部署环境</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install python3 python3-requests python3-gi python3-dbus</span><br></pre></td></tr></table></figure><p>2.新建目录及文件，并修改成你的信息</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch install.sh,smsforwarder,smsforwarder.service</span><br></pre></td></tr></table></figure><p>可以用nano编辑复制，或下载本仓库的代码再进去修改</p><p>3.赋权</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +777 /etc/systemd/system/smsforwarder.service</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 777 /usr/local/bin/smsforwardr</span><br></pre></td></tr></table></figure><p>4.启动服务</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start smsforwarder</span><br></pre></td></tr></table></figure><h4 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h4><ol><li><p>修改SMTP信息请到smsforwarder文件</p><p>my_sender对应你开启了SMTP的发件邮箱</p><p>my_user对应你收件邮箱</p></li></ol><p>————分界线————<br>启动smsforwarder<br>命令<code>systemctl start smsforwarder</code><br>等待几秒，查看状态<br>命令<code>systemctl status smsforwarder</code><br>看看状态是不是绿色字体的active(running)，如果是黄色或红色字体说明没有开始成功，可能是上面没给到权限造成的。</p><p><img src="http://md.walmw.club/markdown/biji/20230515043756.png">)</p><p>可以先用命令python3 smsforwarder将py脚本在终端挂起，发短信测试下会不会转发。<br>没有报错能正常转发。<br>那么恭喜你，可以把服务加进自启了！<br><code>systemctl enable smsforwarder</code></p>]]></content>
       

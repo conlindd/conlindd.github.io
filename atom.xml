@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>九怀</title>
+  
+  <subtitle>九怀的博客</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-05-15T08:30:42.633Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>九怀</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本站Hexo安装及Butterfly主题美化</title>
+    <link href="http://example.com/2023/05/15/%E6%9C%AC%E7%AB%99Hexo%E5%AE%89%E8%A3%85%E5%8F%8AButterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/"/>
+    <id>http://example.com/2023/05/15/%E6%9C%AC%E7%AB%99Hexo%E5%AE%89%E8%A3%85%E5%8F%8AButterfly%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</id>
+    <published>2023-05-15T07:59:00.000Z</published>
+    <updated>2023-05-15T08:30:42.633Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-安装部署Hexo"><a href="#1-安装部署Hexo" class="headerlink" title="1.安装部署Hexo"></a>1.安装部署Hexo</h4><p>地址:<a href="https://zhuanlan.zhihu.com/p/552639819">https://zhuanlan.zhihu.com/p/552639819</a></p><h4 id="2-安装Butterfly主题"><a href="#2-安装Butterfly主题" class="headerlink" title="2.安装Butterfly主题"></a>2.安装Butterfly主题</h4><p>地址:<a href="https://butterfly.js.org/posts/21cfbf15/">https://butterfly.js.org/posts/21cfbf15/</a></p><h4 id="3-Butterfly主题美化"><a href="#3-Butterfly主题美化" class="headerlink" title="3.Butterfly主题美化"></a>3.Butterfly主题美化</h4><p>地址:<a href="https://blog.csdn.net/AAbbccdd12345685/article/details/117871129#">https://blog.csdn.net/AAbbccdd12345685/article/details/117871129#</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;1-安装部署Hexo&quot;&gt;&lt;a href=&quot;#1-安装部署Hexo&quot; class=&quot;headerlink&quot; title=&quot;1.安装部署Hexo&quot;&gt;&lt;/a&gt;1.安装部署Hexo&lt;/h4&gt;&lt;p&gt;地址:&lt;a href=&quot;https://zhuanlan.zhihu.com</summary>
+      
+    
+    
+    
+    <category term="Butterfly" scheme="http://example.com/categories/Butterfly/"/>
+    
+    <category term="Hexo" scheme="http://example.com/categories/Butterfly/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="http://example.com/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随身wifi的debian系统下SMTP邮箱收取邮件后自动转发</title>
+    <link href="http://example.com/2023/05/15/%E6%B2%B9%E6%9E%90%E7%8C%AB%E7%8B%B8%E5%8E%AE%E9%9A%8F%E8%BA%ABwifi%E7%9A%84debian%E7%B3%BB%E7%BB%9F%E4%B8%8BSMTP%E9%82%AE%E7%AE%B1%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8F%91/"/>
+    <id>http://example.com/2023/05/15/%E6%B2%B9%E6%9E%90%E7%8C%AB%E7%8B%B8%E5%8E%AE%E9%9A%8F%E8%BA%ABwifi%E7%9A%84debian%E7%B3%BB%E7%BB%9F%E4%B8%8BSMTP%E9%82%AE%E7%AE%B1%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6%E5%90%8E%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8F%91/</id>
+    <published>2023-05-14T20:26:49.000Z</published>
+    <updated>2023-05-14T20:38:48.206Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="随身wifi的debian系统下SMTP邮箱收取邮件后自动转发"><a href="#随身wifi的debian系统下SMTP邮箱收取邮件后自动转发" class="headerlink" title="随身wifi的debian系统下SMTP邮箱收取邮件后自动转发"></a>随身wifi的debian系统下SMTP邮箱收取邮件后自动转发</h1><blockquote><h2 id="Excerpt"><a href="#Excerpt" class="headerlink" title="Excerpt"></a>Excerpt</h2><p>代码来源自GITEE@刘骢和GITHUB@TeddyNight</p><p>source: <a href="https://gitee.com/MaoMaoMaster/autoforwarder/tree/master">https://gitee.com/MaoMaoMaster/autoforwarder/tree/master</a><br>author: 油析猫狸厮</p></blockquote><hr><p>README.md</p><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>代码来源自GITEE@刘骢和GITHUB@TeddyNight</p><h3 id="观前需知"><a href="#观前需知" class="headerlink" title="观前需知"></a>观前需知</h3><p>0.请确认你的设备能上网。</p><p>1.在观看本教程前请拥有一定Linux操作基础，本人不回答关于任何linux操作问题。例如新建目录，文件，移动，剪切是什么命令，不知道请打开菜鸟教程进linux板块学习！</p><p>2.请先确保你的硬件支持短信收取（在安卓系统下）,应该不支持电信的CDMA，只支持联通移动的LTE通信，或者可以先用刘骢的脚本测试下。</p><p>3.除此之外请预先换源，防止apt下载卡住，不知道怎么换多搜索学习。</p><p>本文用到的文件：install.sh，smsforwarder，smsforwarder.service</p><h3 id="大致流程，详情请见酷安"><a href="#大致流程，详情请见酷安" class="headerlink" title="大致流程，详情请见酷安"></a>大致流程，详情请见酷安</h3><p>1.部署环境</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install python3 python3-requests python3-gi python3-dbus</span><br></pre></td></tr></table></figure><p>2.新建目录及文件，并修改成你的信息</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch install.sh,smsforwarder,smsforwarder.service</span><br></pre></td></tr></table></figure><p>可以用nano编辑复制，或下载本仓库的代码再进去修改</p><p>3.赋权</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +777 /etc/systemd/system/smsforwarder.service</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 777 /usr/local/bin/smsforwardr</span><br></pre></td></tr></table></figure><p>4.启动服务</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start smsforwarder</span><br></pre></td></tr></table></figure><h4 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h4><ol><li><p>修改SMTP信息请到smsforwarder文件</p><p>my_sender对应你开启了SMTP的发件邮箱</p><p>my_user对应你收件邮箱</p></li></ol><p>————分界线————<br>启动smsforwarder<br>命令<code>systemctl start smsforwarder</code><br>等待几秒，查看状态<br>命令<code>systemctl status smsforwarder</code><br>看看状态是不是绿色字体的active(running)，如果是黄色或红色字体说明没有开始成功，可能是上面没给到权限造成的。</p><p><img src="http://md.walmw.club/markdown/biji/20230515043756.png">)</p><p>可以先用命令python3 smsforwarder将py脚本在终端挂起，发短信测试下会不会转发。<br>没有报错能正常转发。<br>那么恭喜你，可以把服务加进自启了！<br><code>systemctl enable smsforwarder</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;随身wifi的debian系统下SMTP邮箱收取邮件后自动转发&quot;&gt;&lt;a href=&quot;#随身wifi的debian系统下SMTP邮箱收取邮件后自动转发&quot; class=&quot;headerlink&quot; title=&quot;随身wifi的debian系统下SMTP邮箱收取邮件后自动转</summary>
+      
+    
+    
+    
+    <category term="随身wifi" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    
+    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    <category term="Debian" scheme="http://example.com/tags/Debian/"/>
+    
+    <category term="短信转发" scheme="http://example.com/tags/%E7%9F%AD%E4%BF%A1%E8%BD%AC%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MrkDown+Hexo语法</title>
+    <link href="http://example.com/2023/05/15/Markdown+Hexo%E6%A0%BC%E5%BC%8F/"/>
+    <id>http://example.com/2023/05/15/Markdown+Hexo%E6%A0%BC%E5%BC%8F/</id>
+    <published>2023-05-14T20:13:54.000Z</published>
+    <updated>2023-05-14T20:29:51.869Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h3><p>在编写 Markdown 时，博主强烈的推荐给大家一款简洁易用的 Markdown 编辑器 —— Typora</p><p>按照官方的说法就是 <strong>简单而强大</strong>，它不仅支持原生的语法，也支持对应的快捷键，更重要的是它还可以 <strong>实时预览</strong></p><p>这里附上 Typora 的下载地址：<a href="https://www.typora.io/">https://www.typora.io/</a>，有兴趣的朋友可以下载来试试</p><p>好，下面开始进入正题，介绍一些常用的 Markdown 语法</p><h4 id="（1）标题"><a href="#（1）标题" class="headerlink" title="（1）标题"></a>（1）标题</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong></p><p>Ctrl+1：一级标题</p><p>Ctrl+2：二级标题</p><p>Ctrl+3：三级标题</p><p>Ctrl+4：四级标题</p><p>Ctrl+5：五级标题</p><p>Ctrl+6 ：六级标题</p><p>Ctrl+0：段落</p><h4 id="（2）粗体、斜体、删除线和下划线"><a href="#（2）粗体、斜体、删除线和下划线" class="headerlink" title="（2）粗体、斜体、删除线和下划线"></a>（2）粗体、斜体、删除线和下划线</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***加粗斜体***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong></p><p>Ctrl+I：斜体</p><p>Ctrl+B：粗体</p><p>Ctrl+U：下划线</p><p>Alt+Shift+5：删除线</p><h4 id="（3）引用块"><a href="#（3）引用块" class="headerlink" title="（3）引用块"></a>（3）引用块</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 文字引用</span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong> Ctrl+Shift+Q</p><h4 id="（4）代码块"><a href="#（4）代码块" class="headerlink" title="（4）代码块"></a>（4）代码块</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">`行内代码`</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>多行代码<br>多行代码</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong></p><p>行内代码：Ctrl+Shift+`</p><p>多行代码：Ctrl+Shift+K</p><h4 id="（5）公式块"><a href="#（5）公式块" class="headerlink" title="（5）公式块"></a>（5）公式块</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong> Ctrl+Shift+M</p><h4 id="（6）分割线"><a href="#（6）分割线" class="headerlink" title="（6）分割线"></a>（6）分割线</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br></pre></td></tr></table></figure><h4 id="（7）列表"><a href="#（7）列表" class="headerlink" title="（7）列表"></a>（7）列表</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 有序列表项</span><br><span class="line"></span><br><span class="line">* 无序列表项</span><br><span class="line"></span><br><span class="line">+ 无序列表项</span><br><span class="line"></span><br><span class="line">- 无序列表项</span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong></p><p>有序列表项：Ctrl+Shift+[</p><p>无序列表项：Ctrl+Shift+]</p><h4 id="（8）表格"><a href="#（8）表格" class="headerlink" title="（8）表格"></a>（8）表格</h4><p><strong>Markdown 语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">表头1|表头2</span><br><span class="line">-|-|-</span><br><span class="line">内容11|内容12</span><br><span class="line">内容21|内容22</span><br></pre></td></tr></table></figure><p><strong>Typora 快捷键：</strong> Ctrl+T</p><h4 id="（9）超链接"><a href="#（9）超链接" class="headerlink" title="（9）超链接"></a>（9）超链接</h4><p><strong>Markdown语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">方法一：[链接文字](链接地址 &quot;链接描述&quot;)</span><br><span class="line">例如：[示例链接](https://www.example.com/ &quot;示例链接&quot;)</span><br><span class="line"></span><br><span class="line">方法二：&lt;链接地址&gt;</span><br><span class="line">例如：&lt;https://www.example.com/&gt;</span><br></pre></td></tr></table></figure><p><strong>Typora快捷键：</strong> Ctrl+K</p><h4 id="（10）图片"><a href="#（10）图片" class="headerlink" title="（10）图片"></a>（10）图片</h4><p><strong>Markdown语法：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![图片文字](图片地址 &quot;图片描述&quot;)</span><br></pre></td></tr></table></figure><p>例如：<img src="https://md.walmw.club/dazhongdianping/1495354607859_business_1.png" alt="汉堡" title="示例图片"></p><p>Typora快捷键： Ctrl+Shift+I</p><p>说明：在 Hexo中 插入图片时，请按照以下的步骤进行设置</p><p>将 站点配置文件 中的 post_asset_folder 选项的值设置为 true</p><p>在站点文件夹中打开 git bash，输入命令 npm install hexo-asset-image –save 安装插件</p><p>这样，当使用 hexo new title 创建文章时，将同时在 source&#x2F;_post 文件夹中生成一个与 title 同名的文件夹，我们只需将图片放进此文件夹中，然后在文章中通过 Markdown 语法进行引用即可</p><p>例如，在资源文件夹（就是那个与 title 同名的文件夹）中添加图片 example.PNG，则可以在对应的文章中使用语句 <img src="/title/example.PNG" alt="示例图片" title="示例图片"> 添加图片</p><p><img src="/Markdown_Yong_JPG/example.PNG" alt="示例图片" title="示例图片"> 添加图片</p><p>3、高级设置<br>（1）模板设置<br>当我们使用命令 hexo new “title” 创建文章时，Hexo 会根据 &#x2F;scaffolds&#x2F;post.md 对新文章进行初始化</p><p>换言之，&#x2F;scaffolds&#x2F;post.md 就是新文章的 模板，所以我们可以修改它来适应自己的写作习惯</p><p>一个简单的示例如下：</p><p>title: MrkDown+Hexo语法<br>date: 1684095234000<br>tags:<br>categories: </p><p>（2）头部设置<br>在每篇利用 Hexo 创建的文章的开头，都会有对文章进行说明的文字，叫做 文章头部</p><p>文章的头部除了可以设置文章标题、发布日期等基础信息外，还可以为文章添加标签、分类等</p><p>一个简单的示例如下：</p><p>title: Title<br>date: YYYY-MM-DD HH:MM:SS<br>tags: [tag1, tag2, …]<br>categories: category</p><p>注意：属性和属性值之间必须有一个空格，否则会解析错误</p><p>（3）首页显示<br>在利用 Hexo 框架搭建的博客网站中，首页会显示文章的内容，且默认显示文章的全部内容</p><p>如果当文章太长的时候就会显得十分冗余，所以我们有必要对其进行精简</p><p>这时，我们只需在文章中使用 <span id="more"></span> 标志即可，表示只会显示标志前面的内容</p><p>三、部署发布<br>在站点文件夹中打开 git bash，输入如下命令部署和发布文章</p><p>$ hexo g -d<br>1<br>建议：在使用 hexo g 部署之后，可以先使用 hexo s 运行本地站点，然后在浏览器输入地址 <a href="http://lacolhost:4000/">http://lacolhost:4000/</a> 查看运行结果，检查无误后再使用 hexo d 发布</p>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;Markdown-语法&quot;&gt;&lt;a href=&quot;#Markdown-语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法&quot;&gt;&lt;/a&gt;Markdown 语法&lt;/h3&gt;&lt;p&gt;在编写 Markdown 时，博主强烈的推荐给大家一款简洁易用的 Markdown 编辑器 —— Typora&lt;/p&gt;
+&lt;p&gt;按照官方的说法就是 &lt;strong&gt;简单而强大&lt;/strong&gt;，它不仅支持原生的语法，也支持对应的快捷键，更重要的是它还可以 &lt;strong&gt;实时预览&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里附上 Typora 的下载地址：&lt;a href=&quot;https://www.typora.io/&quot;&gt;https://www.typora.io/&lt;/a&gt;，有兴趣的朋友可以下载来试试&lt;/p&gt;
+&lt;p&gt;好，下面开始进入正题，介绍一些常用的 Markdown 语法&lt;/p&gt;
+&lt;h4 id=&quot;（1）标题&quot;&gt;&lt;a href=&quot;#（1）标题&quot; class=&quot;headerlink&quot; title=&quot;（1）标题&quot;&gt;&lt;/a&gt;（1）标题&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 一级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## 二级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### 三级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#### 四级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;##### 五级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;###### 六级标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ctrl+1：一级标题&lt;/p&gt;
+&lt;p&gt;Ctrl+2：二级标题&lt;/p&gt;
+&lt;p&gt;Ctrl+3：三级标题&lt;/p&gt;
+&lt;p&gt;Ctrl+4：四级标题&lt;/p&gt;
+&lt;p&gt;Ctrl+5：五级标题&lt;/p&gt;
+&lt;p&gt;Ctrl+6 ：六级标题&lt;/p&gt;
+&lt;p&gt;Ctrl+0：段落&lt;/p&gt;
+&lt;h4 id=&quot;（2）粗体、斜体、删除线和下划线&quot;&gt;&lt;a href=&quot;#（2）粗体、斜体、删除线和下划线&quot; class=&quot;headerlink&quot; title=&quot;（2）粗体、斜体、删除线和下划线&quot;&gt;&lt;/a&gt;（2）粗体、斜体、删除线和下划线&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*斜体*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**粗体**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***加粗斜体***&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;~~删除线~~&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ctrl+I：斜体&lt;/p&gt;
+&lt;p&gt;Ctrl+B：粗体&lt;/p&gt;
+&lt;p&gt;Ctrl+U：下划线&lt;/p&gt;
+&lt;p&gt;Alt+Shift+5：删除线&lt;/p&gt;
+&lt;h4 id=&quot;（3）引用块&quot;&gt;&lt;a href=&quot;#（3）引用块&quot; class=&quot;headerlink&quot; title=&quot;（3）引用块&quot;&gt;&lt;/a&gt;（3）引用块&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 文字引用&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt; Ctrl+Shift+Q&lt;/p&gt;
+&lt;h4 id=&quot;（4）代码块&quot;&gt;&lt;a href=&quot;#（4）代码块&quot; class=&quot;headerlink&quot; title=&quot;（4）代码块&quot;&gt;&lt;/a&gt;（4）代码块&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;`行内代码`&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;多行代码&lt;br&gt;多行代码&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;行内代码：Ctrl+Shift+`&lt;/p&gt;
+&lt;p&gt;多行代码：Ctrl+Shift+K&lt;/p&gt;
+&lt;h4 id=&quot;（5）公式块&quot;&gt;&lt;a href=&quot;#（5）公式块&quot; class=&quot;headerlink&quot; title=&quot;（5）公式块&quot;&gt;&lt;/a&gt;（5）公式块&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;数学公式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt; Ctrl+Shift+M&lt;/p&gt;
+&lt;h4 id=&quot;（6）分割线&quot;&gt;&lt;a href=&quot;#（6）分割线&quot; class=&quot;headerlink&quot; title=&quot;（6）分割线&quot;&gt;&lt;/a&gt;（6）分割线&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;方法一：---&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;方法二：+++&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;方法三：***&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;（7）列表&quot;&gt;&lt;a href=&quot;#（7）列表&quot; class=&quot;headerlink&quot; title=&quot;（7）列表&quot;&gt;&lt;/a&gt;（7）列表&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1. 有序列表项&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* 无序列表项&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+ 无序列表项&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 无序列表项&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有序列表项：Ctrl+Shift+[&lt;/p&gt;
+&lt;p&gt;无序列表项：Ctrl+Shift+]&lt;/p&gt;
+&lt;h4 id=&quot;（8）表格&quot;&gt;&lt;a href=&quot;#（8）表格&quot; class=&quot;headerlink&quot; title=&quot;（8）表格&quot;&gt;&lt;/a&gt;（8）表格&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown 语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;表头1|表头2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-|-|-&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;内容11|内容12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;内容21|内容22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora 快捷键：&lt;/strong&gt; Ctrl+T&lt;/p&gt;
+&lt;h4 id=&quot;（9）超链接&quot;&gt;&lt;a href=&quot;#（9）超链接&quot; class=&quot;headerlink&quot; title=&quot;（9）超链接&quot;&gt;&lt;/a&gt;（9）超链接&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;方法一：[链接文字](链接地址 &amp;quot;链接描述&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;例如：[示例链接](https://www.example.com/ &amp;quot;示例链接&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;方法二：&amp;lt;链接地址&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;例如：&amp;lt;https://www.example.com/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Typora快捷键：&lt;/strong&gt; Ctrl+K&lt;/p&gt;
+&lt;h4 id=&quot;（10）图片&quot;&gt;&lt;a href=&quot;#（10）图片&quot; class=&quot;headerlink&quot; title=&quot;（10）图片&quot;&gt;&lt;/a&gt;（10）图片&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Markdown语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;![图片文字](图片地址 &amp;quot;图片描述&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;例如：&lt;img src=&quot;https://md.walmw.club/dazhongdianping/1495354607859_business_1.png&quot; alt=&quot;汉堡&quot; title=&quot;示例图片&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Typora快捷键： Ctrl+Shift+I&lt;/p&gt;
+&lt;p&gt;说明：在 Hexo中 插入图片时，请按照以下的步骤进行设置&lt;/p&gt;
+&lt;p&gt;将 站点配置文件 中的 post_asset_folder 选项的值设置为 true&lt;/p&gt;
+&lt;p&gt;在站点文件夹中打开 git bash，输入命令 npm install hexo-asset-image –save 安装插件&lt;/p&gt;
+&lt;p&gt;这样，当使用 hexo new title 创建文章时，将同时在 source&amp;#x2F;_post 文件夹中生成一个与 title 同名的文件夹，我们只需将图片放进此文件夹中，然后在文章中通过 Markdown 语法进行引用即可&lt;/p&gt;
+&lt;p&gt;例如，在资源文件夹（就是那个与 title 同名的文件夹）中添加图片 example.PNG，则可以在对应的文章中使用语句 &lt;img src=&quot;/title/example.PNG&quot; alt=&quot;示例图片&quot; title=&quot;示例图片&quot;&gt; 添加图片&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Markdown_Yong_JPG/example.PNG&quot; alt=&quot;示例图片&quot; title=&quot;示例图片&quot;&gt; 添加图片&lt;/p&gt;
+&lt;p&gt;3、高级设置&lt;br&gt;（1）模板设置&lt;br&gt;当我们使用命令 hexo new “title” 创建文章时，Hexo 会根据 &amp;#x2F;scaffolds&amp;#x2F;post.md 对新文章进行初始化&lt;/p&gt;
+&lt;p&gt;换言之，&amp;#x2F;scaffolds&amp;#x2F;post.md 就是新文章的 模板，所以我们可以修改它来适应自己的写作习惯&lt;/p&gt;
+&lt;p&gt;一个简单的示例如下：&lt;/p&gt;
+&lt;p&gt;title: MrkDown+Hexo语法&lt;br&gt;date: 1684095234000&lt;br&gt;tags:&lt;br&gt;categories: &lt;/p&gt;
+&lt;p&gt;（2）头部设置&lt;br&gt;在每篇利用 Hexo 创建的文章的开头，都会有对文章进行说明的文字，叫做 文章头部&lt;/p&gt;
+&lt;p&gt;文章的头部除了可以设置文章标题、发布日期等基础信息外，还可以为文章添加标签、分类等&lt;/p&gt;
+&lt;p&gt;一个简单的示例如下：&lt;/p&gt;
+&lt;p&gt;title: Title&lt;br&gt;date: YYYY-MM-DD HH:MM:SS&lt;br&gt;tags: [tag1, tag2, …]&lt;br&gt;categories: category&lt;/p&gt;
+&lt;p&gt;注意：属性和属性值之间必须有一个空格，否则会解析错误&lt;/p&gt;
+&lt;p&gt;（3）首页显示&lt;br&gt;在利用 Hexo 框架搭建的博客网站中，首页会显示文章的内容，且默认显示文章的全部内容&lt;/p&gt;
+&lt;p&gt;如果当文章太长的时候就会显得十分冗余，所以我们有必要对其进行精简&lt;/p&gt;
+&lt;p&gt;这时，我们只需在文章中使用</summary>
+    
+    
+    
+    <category term="Markdown分组" scheme="http://example.com/categories/Markdown%E5%88%86%E7%BB%84/"/>
+    
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2023/05/15/hello-world/"/>
+    <id>http://example.com/2023/05/15/hello-world/</id>
+    <published>2023-05-14T17:50:03.543Z</published>
+    <updated>1985-10-26T08:15:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
