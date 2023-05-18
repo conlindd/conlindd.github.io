@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>随身wifi使用Debian系统通过命令行发送、接收短信</title>
+      <link href="//articke/suishenwifi-duanxin.html"/>
+      <url>//articke/suishenwifi-duanxin.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230518185649875.png" alt="image-20230518185649875"></p><h3 id="随身wifi使用Debian系统通过命令行发送、接收短信"><a href="#随身wifi使用Debian系统通过命令行发送、接收短信" class="headerlink" title="随身wifi使用Debian系统通过命令行发送、接收短信"></a>随身wifi使用Debian系统通过命令行发送、接收短信</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">固件:</span><br><span class="line"></span><br><span class="line">https://www.123pan.com/s/gYcrVv-Nv8Xv</span><br><span class="line"></span><br><span class="line">详见:https://www.coolapk.com/feed/37616461?shareKey=Y2I0MmE5OTBjYWNlNjQ2NTFkNTY~&amp;shareUid=3727115&amp;shareFrom=com.coolapk.market_13.0.1</span><br><span class="line"></span><br><span class="line">随身wifi版本:</span><br><span class="line"></span><br><span class="line">UFI001c_mb_v01</span><br></pre></td></tr></table></figure><h4 id="0-调制解调器使用文档"><a href="#0-调制解调器使用文档" class="headerlink" title="0.调制解调器使用文档"></a>0.调制解调器使用文档</h4><p><a href="https://www.mankier.com/1/mmcli">https://www.mankier.com/1/mmcli</a></p><h4 id="1-随身wifi发送短信"><a href="#1-随身wifi发送短信" class="headerlink" title="1.随身wifi发送短信"></a>1.随身wifi发送短信</h4><p>1.创建内容为hello word的短信  收件人+123456789</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-create-sms=&quot;text=&#x27;Hello world&#x27;,number=&#x27;+1234567890&#x27;&quot;</span><br><span class="line">Successfully created new SMS: /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>2.存储短信sm</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@openstick:/home/user# sudo mmcli -s 1 --store-in-storage=&quot;sm&quot;</span><br><span class="line">successfully stored the SMS</span><br></pre></td></tr></table></figure><p>3.读取短信1的内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -s 1</span><br><span class="line">  -----------------------------</span><br><span class="line">  General    |            path: /org/freedesktop/ModemManager1/SMS/1</span><br><span class="line">  -----------------------------</span><br><span class="line">  Content    |          number: +1234567890</span><br><span class="line">             |            text: Hello world</span><br><span class="line">  -----------------------------</span><br><span class="line">  Properties |        pdu type: submit</span><br><span class="line">             |           state: stored</span><br><span class="line">             |         storage: sm</span><br><span class="line">             | delivery report: not requested</span><br><span class="line">root@openstick:/home/user# </span><br></pre></td></tr></table></figure><p>4.列出所有短信</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-status</span><br><span class="line">  -------------------------------</span><br><span class="line">  Messaging | supported storages: sm, me</span><br><span class="line">            |   default storages: me</span><br><span class="line">root@openstick:/home/user# </span><br><span class="line"></span><br></pre></td></tr></table></figure><p>5.建立短信    text&#x3D;’文本’,number&#x3D;’+86手机号’</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-create-sms=&quot;text=&#x27;测试使用随身wifilinux发送短信&#x27;,number=&#x27;+8615xxxxxxxx24&#x27;&quot;</span><br><span class="line">Successfully created new SMS: /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>6.发送短信到手机   0表示 sms&#x2F;0的0</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -s 0 --send</span><br><span class="line">successfully sent the SMS</span><br></pre></td></tr></table></figure><p>发送成功后,手机收到短信</p><p><img src="https://md.walmw.club/markdown/biji/image-20230518185043728.png" alt="image-20230518185043728"></p><p>7.列出发送的短信</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-list-sms</span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/0 (sent)</span><br></pre></td></tr></table></figure><p>8.获取单个短信的内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">root@openstick:/home/user#  sudo mmcli -s 0 /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line">  -------------------------------</span><br><span class="line">  General    |              path: /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line">  -------------------------------</span><br><span class="line">  Content    |            number: +8615xxxxxxxx24</span><br><span class="line">             |              text: 测试使用随身wifilinux发送短信</span><br><span class="line">  -------------------------------</span><br><span class="line">  Properties |          pdu type: submit</span><br><span class="line">             |             state: sent</span><br><span class="line">             |   delivery report: not requested</span><br><span class="line">             | message reference: 5</span><br></pre></td></tr></table></figure><p>手机向随机wifi上的这个号码发送短信</p><p><img src="https://md.walmw.club/markdown/biji/image-20230518185220647.png" alt="image-20230518185220647"></p><p>9.获取所有短信列表</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-list-sms</span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/2 (received)  </span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/1 (stored)</span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/0 (sent)</span><br><span class="line"> #---received 收到的</span><br><span class="line"> #---stored存储的</span><br><span class="line"> #---sent 发送的</span><br></pre></td></tr></table></figure><p>10.获取接收到的短信的内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -s 2 /org/freedesktop/ModemManager1/SMS/2</span><br><span class="line">  -----------------------</span><br><span class="line">  General    |      path: /org/freedesktop/ModemManager1/SMS/2</span><br><span class="line">  -----------------------</span><br><span class="line">  Content    |    number: +8615xxxxxxxx24</span><br><span class="line">             |      text: 测试linux接收电短信</span><br><span class="line">  -----------------------</span><br><span class="line">  Properties |  pdu type: deliver</span><br><span class="line">             |     state: received</span><br><span class="line">             | timestamp: 2023-05-18T13:16:34+08:00</span><br><span class="line">root@openstick:/home/user# </span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随身wifi </category>
+          
+          <category> 短信 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随身wifi </tag>
+            
+            <tag> Debian </tag>
+            
+            <tag> 短信 </tag>
+            
+            <tag> 发送短信 </tag>
+            
+            <tag> 接收短信 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>随身wifi通过蓝牙连接蓝牙耳机并播放音乐</title>
       <link href="//articke/suishenwifi-lanya-yinyue.html"/>
       <url>//articke/suishenwifi-lanya-yinyue.html</url>
@@ -91,41 +126,6 @@
             <tag> 1Panel </tag>
             
             <tag> Debian </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>使用5块钱的随身wifi搭建ChatGpt Web客户端</title>
-      <link href="//articke/suishenwifi-duanxin.html"/>
-      <url>//articke/suishenwifi-duanxin.html</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230518185649875.png" alt="image-20230518185649875"></p><h3 id="随身wifi使用Debian系统通过命令行发送、接收短信"><a href="#随身wifi使用Debian系统通过命令行发送、接收短信" class="headerlink" title="随身wifi使用Debian系统通过命令行发送、接收短信"></a>随身wifi使用Debian系统通过命令行发送、接收短信</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">固件:</span><br><span class="line"></span><br><span class="line">https://www.123pan.com/s/gYcrVv-Nv8Xv</span><br><span class="line"></span><br><span class="line">详见:https://www.coolapk.com/feed/37616461?shareKey=Y2I0MmE5OTBjYWNlNjQ2NTFkNTY~&amp;shareUid=3727115&amp;shareFrom=com.coolapk.market_13.0.1</span><br><span class="line"></span><br><span class="line">随身wifi版本:</span><br><span class="line"></span><br><span class="line">UFI001c_mb_v01</span><br></pre></td></tr></table></figure><h4 id="0-调制解调器使用文档"><a href="#0-调制解调器使用文档" class="headerlink" title="0.调制解调器使用文档"></a>0.调制解调器使用文档</h4><p><a href="https://www.mankier.com/1/mmcli">https://www.mankier.com/1/mmcli</a></p><h4 id="1-随身wifi发送短信"><a href="#1-随身wifi发送短信" class="headerlink" title="1.随身wifi发送短信"></a>1.随身wifi发送短信</h4><p>1.创建内容为hello word的短信  收件人+123456789</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-create-sms=&quot;text=&#x27;Hello world&#x27;,number=&#x27;+1234567890&#x27;&quot;</span><br><span class="line">Successfully created new SMS: /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>2.存储短信sm</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@openstick:/home/user# sudo mmcli -s 1 --store-in-storage=&quot;sm&quot;</span><br><span class="line">successfully stored the SMS</span><br></pre></td></tr></table></figure><p>3.读取短信1的内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -s 1</span><br><span class="line">  -----------------------------</span><br><span class="line">  General    |            path: /org/freedesktop/ModemManager1/SMS/1</span><br><span class="line">  -----------------------------</span><br><span class="line">  Content    |          number: +1234567890</span><br><span class="line">             |            text: Hello world</span><br><span class="line">  -----------------------------</span><br><span class="line">  Properties |        pdu type: submit</span><br><span class="line">             |           state: stored</span><br><span class="line">             |         storage: sm</span><br><span class="line">             | delivery report: not requested</span><br><span class="line">root@openstick:/home/user# </span><br></pre></td></tr></table></figure><p>4.列出所有短信</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-status</span><br><span class="line">  -------------------------------</span><br><span class="line">  Messaging | supported storages: sm, me</span><br><span class="line">            |   default storages: me</span><br><span class="line">root@openstick:/home/user# </span><br><span class="line"></span><br></pre></td></tr></table></figure><p>5.建立短信    text&#x3D;’文本’,number&#x3D;’+86手机号’</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-create-sms=&quot;text=&#x27;测试使用随身wifilinux发送短信&#x27;,number=&#x27;+8615xxxxxxxx24&#x27;&quot;</span><br><span class="line">Successfully created new SMS: /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>6.发送短信到手机   0表示 sms&#x2F;0的0</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -s 0 --send</span><br><span class="line">successfully sent the SMS</span><br></pre></td></tr></table></figure><p>发送成功后,手机收到短信</p><p><img src="https://md.walmw.club/markdown/biji/image-20230518185043728.png" alt="image-20230518185043728"></p><p>7.列出发送的短信</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-list-sms</span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/0 (sent)</span><br></pre></td></tr></table></figure><p>8.获取单个短信的内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">root@openstick:/home/user#  sudo mmcli -s 0 /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line">  -------------------------------</span><br><span class="line">  General    |              path: /org/freedesktop/ModemManager1/SMS/0</span><br><span class="line">  -------------------------------</span><br><span class="line">  Content    |            number: +8615xxxxxxxx24</span><br><span class="line">             |              text: 测试使用随身wifilinux发送短信</span><br><span class="line">  -------------------------------</span><br><span class="line">  Properties |          pdu type: submit</span><br><span class="line">             |             state: sent</span><br><span class="line">             |   delivery report: not requested</span><br><span class="line">             | message reference: 5</span><br></pre></td></tr></table></figure><p>手机向随机wifi上的这个号码发送短信</p><p><img src="https://md.walmw.club/markdown/biji/image-20230518185220647.png" alt="image-20230518185220647"></p><p>9.获取所有短信列表</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -m 0 --messaging-list-sms</span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/2 (received)  </span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/1 (stored)</span><br><span class="line">    /org/freedesktop/ModemManager1/SMS/0 (sent)</span><br><span class="line"> #---received 收到的</span><br><span class="line"> #---stored存储的</span><br><span class="line"> #---sent 发送的</span><br></pre></td></tr></table></figure><p>10.获取接收到的短信的内容</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">root@openstick:/home/user# sudo mmcli -s 2 /org/freedesktop/ModemManager1/SMS/2</span><br><span class="line">  -----------------------</span><br><span class="line">  General    |      path: /org/freedesktop/ModemManager1/SMS/2</span><br><span class="line">  -----------------------</span><br><span class="line">  Content    |    number: +8615xxxxxxxx24</span><br><span class="line">             |      text: 测试linux接收电短信</span><br><span class="line">  -----------------------</span><br><span class="line">  Properties |  pdu type: deliver</span><br><span class="line">             |     state: received</span><br><span class="line">             | timestamp: 2023-05-18T13:16:34+08:00</span><br><span class="line">root@openstick:/home/user# </span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 随身wifi </category>
-          
-          <category> 短信 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 随身wifi </tag>
-            
-            <tag> Debian </tag>
-            
-            <tag> 短信 </tag>
-            
-            <tag> 发送短信 </tag>
-            
-            <tag> 接收短信 </tag>
             
         </tags>
       
