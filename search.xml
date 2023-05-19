@@ -4,11 +4,69 @@
   
     
     <entry>
+      <title>linux替换掉rm命令防止误删系统</title>
+      <link href="//articke/linux-rm-tihuan.html"/>
+      <url>//articke/linux-rm-tihuan.html</url>
+      
+        <content type="html"><![CDATA[<p>原文作者博客:<a href="https://blog.csdn.net/VIP_WangSai/article/details/87623467">https://blog.csdn.net/VIP_WangSai/article/details/87623467</a></p><p>版权声明：本文为博主原创文章，遵循 <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC 4.0 BY-SA</a> 版权协议，转载请附上原文出处链接和本声明。</p><p>很多人都使用过这个命令 “rm -rf” 命令 ，一不小心容易出现误删除的情况。</p><p>泪奔～～～～～～～～～～</p><p>我们可以修改rm命令，将rm命令改为mv命令，移动到指定文件夹而不再是强力删除。</p><p>步骤：<br>1、打开一个终端，输入命令：vim ~&#x2F;.bashrc<br>2、在打开的文件最后加入如下代码：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/.trash   #在家目录下创建一个.trash文件夹(隐藏文件，ls -a 查看)</span><br><span class="line">alias rm=del        #使用别名del代替rm   </span><br><span class="line">del()               #函数del，作用：将rm命令修改为mv命令</span><br><span class="line">&#123;  </span><br><span class="line">  mv $@ ~/.trash/  </span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure><p>3、保存修改并退出<br>4、使设置生效：在终端下输入</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure><p>至此，已经设置完成，可以在终端下进行测试了。<br>测试结果（命令总结）<br>1、删除文件   </p><p>2、清空回收站（即：清空.trash文件夹） <br>注：rm命令已经删除，所以要彻底删除文件的话，使用 &#x2F;bin&#x2F;rm -rf ~&#x2F;.trash&#x2F;* 彻底清除垃圾箱里的所有文件。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">del \[文件名\]   </span><br><span class="line">rm \[文件名\]   </span><br><span class="line">del \*   </span><br><span class="line">rm \* </span><br></pre></td></tr></table></figure><p>2、清空回收站（即：清空.trash文件夹） <br>注：rm命令已经删除，所以要彻底删除文件的话，使用 </p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/rm -rf ~/.trash/\*</span><br></pre></td></tr></table></figure><p> 彻底清除垃圾箱里的所有文件。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+          <category> rm命令 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> rm命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>debian安装包安装python</title>
+      <link href="//articke/debian-install-python.html"/>
+      <url>//articke/debian-install-python.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>系统环境：<a href="https://so.csdn.net/so/search?q=Debian&spm=1001.2101.3001.7020">Debian</a> Linux 10<br>计划安装：Python 3.10.3</p><h2 id="一、下载python源码"><a href="#一、下载python源码" class="headerlink" title="一、下载python源码"></a>一、下载python<a href="https://so.csdn.net/so/search?q=%E6%BA%90%E7%A0%81&spm=1001.2101.3001.7020">源码</a></h2><p>在Python官网上下载源码<br><a href="https://www.python.org/downloads/source/[%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD](https://www.python.org/downloads/source/)%E3%80%82">https://www.python.org/downloads/source/[源码下载](https://www.python.org/downloads/source/)。</a></p><h2 id="二、安装步骤"><a href="#二、安装步骤" class="headerlink" title="二、安装步骤"></a>二、安装步骤</h2><p>主要参照源码包里面的说明，网上也有教程。<br>1.源码解压缩，进入文件夹，在终端中打开</p><h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h2><p>代码如下：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make test</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><h2 id="3-调试"><a href="#3-调试" class="headerlink" title="3.调试"></a>3.调试</h2><p>运行完以上代码按说应该是安装完了，但是不一定能用，需要测试一下。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 --version</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> debian </category>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> debian </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>随身wifi  Debian系统获取ipv6地址并发送邮件通知</title>
       <link href="//articke/suishenwifi-ipv6-sendemail.html"/>
       <url>//articke/suishenwifi-ipv6-sendemail.html</url>
       
-        <content type="html"><![CDATA[<h3 id="随身wifi-Debian系统获取ipv6地址并发送邮件通知"><a href="#随身wifi-Debian系统获取ipv6地址并发送邮件通知" class="headerlink" title="随身wifi  Debian系统获取ipv6地址并发送邮件通知"></a>随身wifi  Debian系统获取ipv6地址并发送邮件通知</h3><p><img src="https://md.walmw.club/markdown/biji/image-20230519084009338.png" alt="image-20230519084009338"></p><p>项目地址:<br><a href="https://github.com/conlindd/suishenwifi_ipv6_sendemail">https://github.com/conlindd/suishenwifi_ipv6_sendemail</a></p><h4 id="0-安装python相关的内容"><a href="#0-安装python相关的内容" class="headerlink" title="0.安装python相关的内容"></a>0.安装python相关的内容</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@4G-wifi:~# apt-get install python3 python3-requests python3-gi python3-dbus</span><br></pre></td></tr></table></figure><h4 id="1-复制本仓库的get-ipv6-email-py文件保存到指定目录-x2F-usr-x2F-local"><a href="#1-复制本仓库的get-ipv6-email-py文件保存到指定目录-x2F-usr-x2F-local" class="headerlink" title="1.复制本仓库的get_ipv6_email.py文件保存到指定目录&#x2F;usr&#x2F;local"></a>1.复制本仓库的get_ipv6_email.py文件保存到指定目录&#x2F;usr&#x2F;local</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@4G-wifi:~# </span><br><span class="line">root@4G-wifi:~# cd /usr/local</span><br><span class="line">root@4G-wifi:/usr/local# mkdir gipv6</span><br><span class="line">root@4G-wifi:/usr/local# vim get_ipv6_email.py</span><br><span class="line"></span><br><span class="line">然后将本项目get_ipv6_email.py文件的内容复制进去</span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id="2-然后把你的邮箱信息填写进去"><a href="#2-然后把你的邮箱信息填写进去" class="headerlink" title="2.然后把你的邮箱信息填写进去"></a>2.然后把你的邮箱信息填写进去</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mail_host = &quot;smtp.163.com&quot; # 这个去邮箱找</span><br><span class="line">   mail_user = &#x27;1xxxxxxx0@163.com&#x27; #发送的邮件地址</span><br><span class="line">   mail_auth_code = &#x27;YxxxxxxxxH&#x27; #授权码，不是邮箱的登陆密码</span><br><span class="line">   mail_sender = mail_user # 用mail_user 作为发送人</span><br><span class="line">   mail_receivers = [&#x27;1xxxxxx70@qq.com&#x27;] #收件人list</span><br></pre></td></tr></table></figure><h4 id="3-给get-ipv6-email-py文件赋权"><a href="#3-给get-ipv6-email-py文件赋权" class="headerlink" title="3.给get_ipv6_email.py文件赋权"></a>3.给get_ipv6_email.py文件赋权</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo chmod +x get_ipv6_email.py</span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id="4-设置开机脚本自启动"><a href="#4-设置开机脚本自启动" class="headerlink" title="4.设置开机脚本自启动"></a>4.设置开机脚本自启动</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/rc.local</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">把下边这句填入 exit 0上面</span><br><span class="line"></span><br><span class="line">/usr/bin/python3 /usr/local/get_ipv6_email.py &gt; /usr/local/get_ipv6_email.log</span><br></pre></td></tr></table></figure><h4 id="5-最后重启Linux-脚本就能自动运行并打印日志了。"><a href="#5-最后重启Linux-脚本就能自动运行并打印日志了。" class="headerlink" title="5.最后重启Linux,脚本就能自动运行并打印日志了。"></a>5.最后重启Linux,脚本就能自动运行并打印日志了。</h4><h4 id="6-可以看到接收的邮箱里有一个邮件-上边会显示你的ipv6地址"><a href="#6-可以看到接收的邮箱里有一个邮件-上边会显示你的ipv6地址" class="headerlink" title="6.可以看到接收的邮箱里有一个邮件,上边会显示你的ipv6地址"></a>6.可以看到接收的邮箱里有一个邮件,上边会显示你的ipv6地址</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2023-05-19 07:36:41</span><br><span class="line">该随身wifi的ipv6地址如下:</span><br><span class="line">[&quot;http://[2xx:xxx::11eb]&quot;]</span><br></pre></td></tr></table></figure><h4 id="7-在你的debian上创建网站-然后在浏览器中访问你的ipv6地址-端口号就能访问通了"><a href="#7-在你的debian上创建网站-然后在浏览器中访问你的ipv6地址-端口号就能访问通了" class="headerlink" title="7.在你的debian上创建网站,然后在浏览器中访问你的ipv6地址:端口号就能访问通了"></a>7.在你的debian上创建网站,然后在浏览器中访问你的ipv6地址:端口号就能访问通了</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注意访问地址的格式是:</span><br><span class="line"> http:[你的ipv6地址]:端口号</span><br><span class="line"> </span><br><span class="line">例如:</span><br><span class="line">http://[2xx:xxx::11eb]:1526</span><br></pre></td></tr></table></figure><p>参考:</p><p><a href="https://zhuanlan.zhihu.com/p/338190964">https://zhuanlan.zhihu.com/p/338190964</a></p><p><a href="https://www.linuxprobe.com/linux-python-auto.html">https://www.linuxprobe.com/linux-python-auto.html</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="随身wifi-Debian系统获取ipv6地址并发送邮件通知"><a href="#随身wifi-Debian系统获取ipv6地址并发送邮件通知" class="headerlink" title="随身wifi  Debian系统获取ipv6地址并发送邮件通知"></a>随身wifi  Debian系统获取ipv6地址并发送邮件通知</h3><p><img src="https://md.walmw.club/markdown/biji/image-20230519084009338.png" alt="image-20230519084009338"></p><p>项目地址:<br><a href="https://github.com/conlindd/suishenwifi_ipv6_sendemail">https://github.com/conlindd/suishenwifi_ipv6_sendemail</a></p><h4 id="0-安装python相关的内容"><a href="#0-安装python相关的内容" class="headerlink" title="0.安装python相关的内容"></a>0.安装python相关的内容</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@4G-wifi:~# apt-get install python3 python3-requests python3-gi python3-dbus</span><br></pre></td></tr></table></figure><h4 id="1-复制本仓库的get-ipv6-email-py文件保存到指定目录-x2F-usr-x2F-local"><a href="#1-复制本仓库的get-ipv6-email-py文件保存到指定目录-x2F-usr-x2F-local" class="headerlink" title="1.复制本仓库的get_ipv6_email.py文件保存到指定目录&#x2F;usr&#x2F;local"></a>1.复制本仓库的get_ipv6_email.py文件保存到指定目录&#x2F;usr&#x2F;local</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@4G-wifi:~# </span><br><span class="line">root@4G-wifi:~# cd /usr/local</span><br><span class="line">root@4G-wifi:/usr/local# mkdir gipv6</span><br><span class="line">root@4G-wifi:/usr/local# cd gipv6</span><br><span class="line">root@4G-wifi:/usr/local/gipv6# vim get_ipv6_email.py</span><br><span class="line"></span><br><span class="line">然后将本项目get_ipv6_email.py文件的内容复制进去</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id="2-然后把你的邮箱信息填写进去"><a href="#2-然后把你的邮箱信息填写进去" class="headerlink" title="2.然后把你的邮箱信息填写进去"></a>2.然后把你的邮箱信息填写进去</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mail_host = &quot;smtp.163.com&quot; # 这个去邮箱找</span><br><span class="line">   mail_user = &#x27;1xxxxxxx0@163.com&#x27; #发送的邮件地址</span><br><span class="line">   mail_auth_code = &#x27;YxxxxxxxxH&#x27; #授权码，不是邮箱的登陆密码</span><br><span class="line">   mail_sender = mail_user # 用mail_user 作为发送人</span><br><span class="line">   mail_receivers = [&#x27;1xxxxxx70@qq.com&#x27;] #收件人list</span><br></pre></td></tr></table></figure><h4 id="3-给get-ipv6-email-py文件赋权"><a href="#3-给get-ipv6-email-py文件赋权" class="headerlink" title="3.给get_ipv6_email.py文件赋权"></a>3.给get_ipv6_email.py文件赋权</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo chmod +x get_ipv6_email.py</span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id="4-设置开机脚本自启动"><a href="#4-设置开机脚本自启动" class="headerlink" title="4.设置开机脚本自启动"></a>4.设置开机脚本自启动</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/rc.local</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">把下边这句填入 exit 0上面</span><br><span class="line"></span><br><span class="line">/usr/bin/python3 /usr/local/gipv6/get_ipv6_email.py &gt; /usr/local/gipv6/get_ipv6_email.log</span><br></pre></td></tr></table></figure><h4 id="5-最后重启Linux-脚本就能自动运行并打印日志了。"><a href="#5-最后重启Linux-脚本就能自动运行并打印日志了。" class="headerlink" title="5.最后重启Linux,脚本就能自动运行并打印日志了。"></a>5.最后重启Linux,脚本就能自动运行并打印日志了。</h4><h4 id="6-可以看到接收的邮箱里有一个邮件-上边会显示你的ipv6地址"><a href="#6-可以看到接收的邮箱里有一个邮件-上边会显示你的ipv6地址" class="headerlink" title="6.可以看到接收的邮箱里有一个邮件,上边会显示你的ipv6地址"></a>6.可以看到接收的邮箱里有一个邮件,上边会显示你的ipv6地址</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2023-05-19 07:36:41</span><br><span class="line">该随身wifi的ipv6地址如下:</span><br><span class="line">[&quot;http://[2xx:xxx::11eb]&quot;]</span><br><span class="line">使用方法:</span><br><span class="line">http://[你的ipv6地址号]:端口号 </span><br><span class="line">然后输入到浏览器地址栏进行访问</span><br></pre></td></tr></table></figure><h4 id="7-在你的debian上创建网站-然后在浏览器中访问你的ipv6地址-端口号就能访问通了"><a href="#7-在你的debian上创建网站-然后在浏览器中访问你的ipv6地址-端口号就能访问通了" class="headerlink" title="7.在你的debian上创建网站,然后在浏览器中访问你的ipv6地址:端口号就能访问通了"></a>7.在你的debian上创建网站,然后在浏览器中访问你的ipv6地址:端口号就能访问通了</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注意访问地址的格式是:</span><br><span class="line"> http:[你的ipv6地址]:端口号</span><br><span class="line"> </span><br><span class="line">例如:</span><br><span class="line">http://[2xx:xxx::11eb]:1526</span><br></pre></td></tr></table></figure><p>参考:</p><p><a href="https://zhuanlan.zhihu.com/p/338190964">https://zhuanlan.zhihu.com/p/338190964</a></p><p><a href="https://www.linuxprobe.com/linux-python-auto.html">https://www.linuxprobe.com/linux-python-auto.html</a></p>]]></content>
       
       
       <categories>
