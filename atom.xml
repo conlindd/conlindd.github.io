@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-19T19:21:37.525Z</updated>
+  <updated>2023-05-22T03:43:57.365Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</title>
+    <link href="http://example.com/articke/suishenwifi-ufi003-meiwang.html"/>
+    <id>http://example.com/articke/suishenwifi-ufi003-meiwang.html</id>
+    <published>2023-05-22T03:35:15.000Z</published>
+    <updated>2023-05-22T03:43:57.365Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230522113640295.png" alt="image-20230522113640295"></p><h1 id="解决UFI003刷Debian没网问题-同时支持ipv6-其他系统自测"><a href="#解决UFI003刷Debian没网问题-同时支持ipv6-其他系统自测" class="headerlink" title="解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测"></a>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">刷了UFI003的超频版的Debian插上手机卡不识别,找问题,找了好久找不到,替换了几个文件解决了</span><br></pre></td></tr></table></figure><h4 id="1-将这几个文件替换到你刷机的超频版包里"><a href="#1-将这几个文件替换到你刷机的超频版包里" class="headerlink" title="1.将这几个文件替换到你刷机的超频版包里"></a>1.将这几个文件替换到你刷机的超频版包里</h4><p>包地址:<a href="https://wwvw.lanzouy.com/iPghD0ww53ib">https://wwvw.lanzouy.com/iPghD0ww53ib</a> 密码:bbps</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fsc.bin</span><br><span class="line">fsg.bin</span><br><span class="line">modemst1.bin</span><br><span class="line">modemst2.bin</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230522082933596.png" alt="image-20230522082933596"></p><h4 id="2-使用-lt-一键刷入工具-bat-gt-进行正常刷机-然后就有网了"><a href="#2-使用-lt-一键刷入工具-bat-gt-进行正常刷机-然后就有网了" class="headerlink" title="2.使用&lt;一键刷入工具.bat&gt;进行正常刷机,然后就有网了"></a>2.使用&lt;一键刷入工具.bat&gt;进行正常刷机,然后就有网了</h4><p><img src="https://md.walmw.club/markdown/biji/image-20230522082619875.png" alt="image-20230522082619875"></p><p><img src="https://md.walmw.club/markdown/biji/image-20230522082710722.png" alt="image-20230522082710722"></p><p><img src="https://md.walmw.club/markdown/biji/image-20230522082847169.png" alt="image-20230522082847169"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://md.walmw.club/markdown/biji/image-20230522113640295.png&quot; alt=&quot;image-20230522113640295&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;解决UFI003刷Debian没网问题</summary>
+      
+    
+    
+    
+    <category term="随身wifi" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    <category term="Debian" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/Debian/"/>
+    
+    
+    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    <category term="Debian" scheme="http://example.com/tags/Debian/"/>
+    
+    <category term="ipv6" scheme="http://example.com/tags/ipv6/"/>
+    
+    <category term="UFI003" scheme="http://example.com/tags/UFI003/"/>
+    
+  </entry>
   
   <entry>
     <title>linux替换掉rm命令防止误删系统</title>

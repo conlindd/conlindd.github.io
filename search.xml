@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</title>
+      <link href="//articke/suishenwifi-ufi003-meiwang.html"/>
+      <url>//articke/suishenwifi-ufi003-meiwang.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230522113640295.png" alt="image-20230522113640295"></p><h1 id="解决UFI003刷Debian没网问题-同时支持ipv6-其他系统自测"><a href="#解决UFI003刷Debian没网问题-同时支持ipv6-其他系统自测" class="headerlink" title="解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测"></a>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">刷了UFI003的超频版的Debian插上手机卡不识别,找问题,找了好久找不到,替换了几个文件解决了</span><br></pre></td></tr></table></figure><h4 id="1-将这几个文件替换到你刷机的超频版包里"><a href="#1-将这几个文件替换到你刷机的超频版包里" class="headerlink" title="1.将这几个文件替换到你刷机的超频版包里"></a>1.将这几个文件替换到你刷机的超频版包里</h4><p>包地址:<a href="https://wwvw.lanzouy.com/iPghD0ww53ib">https://wwvw.lanzouy.com/iPghD0ww53ib</a> 密码:bbps</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fsc.bin</span><br><span class="line">fsg.bin</span><br><span class="line">modemst1.bin</span><br><span class="line">modemst2.bin</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230522082933596.png" alt="image-20230522082933596"></p><h4 id="2-使用-lt-一键刷入工具-bat-gt-进行正常刷机-然后就有网了"><a href="#2-使用-lt-一键刷入工具-bat-gt-进行正常刷机-然后就有网了" class="headerlink" title="2.使用&lt;一键刷入工具.bat&gt;进行正常刷机,然后就有网了"></a>2.使用&lt;一键刷入工具.bat&gt;进行正常刷机,然后就有网了</h4><p><img src="https://md.walmw.club/markdown/biji/image-20230522082619875.png" alt="image-20230522082619875"></p><p><img src="https://md.walmw.club/markdown/biji/image-20230522082710722.png" alt="image-20230522082710722"></p><p><img src="https://md.walmw.club/markdown/biji/image-20230522082847169.png" alt="image-20230522082847169"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随身wifi </category>
+          
+          <category> Debian </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随身wifi </tag>
+            
+            <tag> Debian </tag>
+            
+            <tag> ipv6 </tag>
+            
+            <tag> UFI003 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>linux替换掉rm命令防止误删系统</title>
       <link href="//articke/linux-rm-tihuan.html"/>
       <url>//articke/linux-rm-tihuan.html</url>
