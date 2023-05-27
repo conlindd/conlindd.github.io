@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-24T04:49:38.567Z</updated>
+  <updated>2023-05-27T04:43:02.547Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本网站整合了ChatGpt点击这个链接使用,请使用自己的Open Key,本站暂不提供</title>
+    <link href="http://example.com/articke/chatgpt-gerenzhandian.html"/>
+    <id>http://example.com/articke/chatgpt-gerenzhandian.html</id>
+    <published>2023-05-27T04:42:43.000Z</published>
+    <updated>2023-05-27T04:43:02.547Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-本网站整合了ChatGpt点击这个链接使用-请使用自己的Open-Key-本站暂不提供"><a href="#1-本网站整合了ChatGpt点击这个链接使用-请使用自己的Open-Key-本站暂不提供" class="headerlink" title="1.本网站整合了ChatGpt点击这个链接使用,请使用自己的Open Key,本站暂不提供"></a>1.本网站整合了ChatGpt点击这个链接使用,请使用自己的Open Key,本站暂不提供</h3><p><img src="https://md.walmw.club/markdown/biji/image-20230527124044238.png" alt="image-20230527124044238"></p><h3 id="2-填写自己的Open-Key"><a href="#2-填写自己的Open-Key" class="headerlink" title="2.填写自己的Open Key"></a>2.填写自己的Open Key</h3><p><img src="https://md.walmw.club/markdown/biji/image-20230527124137192.png" alt="image-20230527124137192"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1-本网站整合了ChatGpt点击这个链接使用-请使用自己的Open-Key-本站暂不提供&quot;&gt;&lt;a href=&quot;#1-本网站整合了ChatGpt点击这个链接使用-请使用自己的Open-Key-本站暂不提供&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+      
+    
+    
+    
+    <category term="Open Key" scheme="http://example.com/categories/Open-Key/"/>
+    
+    <category term="ChatGpt" scheme="http://example.com/categories/Open-Key/ChatGpt/"/>
+    
+    
+    <category term="ChatGpt" scheme="http://example.com/tags/ChatGpt/"/>
+    
+    <category term="Open Key" scheme="http://example.com/tags/Open-Key/"/>
+    
+  </entry>
   
   <entry>
     <title>网站整改中.......</title>
@@ -315,9 +343,9 @@
     <category term="ChatGpt" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/ChatGpt/"/>
     
     
-    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
-    
     <category term="ChatGpt" scheme="http://example.com/tags/ChatGpt/"/>
+    
+    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
     
     <category term="1Panel" scheme="http://example.com/tags/1Panel/"/>
     
