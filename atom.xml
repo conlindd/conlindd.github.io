@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-22T03:43:57.365Z</updated>
+  <updated>2023-05-24T04:49:38.567Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,69 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网站整改中.......</title>
+    <link href="http://example.com/articke/wangzhanzhenggai.html"/>
+    <id>http://example.com/articke/wangzhanzhenggai.html</id>
+    <published>2023-05-24T04:48:06.000Z</published>
+    <updated>2023-05-24T04:49:38.567Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="网站整改中……"><a href="#网站整改中……" class="headerlink" title="网站整改中……."></a>网站整改中…….</h4><p>经通知本网站需要整改,本月25号以后有结果</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;网站整改中……&quot;&gt;&lt;a href=&quot;#网站整改中……&quot; class=&quot;headerlink&quot; title=&quot;网站整改中…….&quot;&gt;&lt;/a&gt;网站整改中…….&lt;/h4&gt;&lt;p&gt;经通知本网站需要整改,本月25号以后有结果&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="网站整改" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99%E6%95%B4%E6%94%B9/"/>
+    
+    
+    <category term="网站整改" scheme="http://example.com/tags/%E7%BD%91%E7%AB%99%E6%95%B4%E6%94%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update</title>
+    <link href="http://example.com/articke/suishenwifi-meiwangzenmeban.html"/>
+    <id>http://example.com/articke/suishenwifi-meiwangzenmeban.html</id>
+    <published>2023-05-23T19:43:02.000Z</published>
+    <updated>2023-05-24T07:02:39.444Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230524034605845.png" alt="image-20230524034605845"></p><p>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update!!!!!!!!!!!!</p><p>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update!!!!!!!!!!!!</p><p>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update!!!!!!!!!!!!</p><p>1.更新和升级系统中已安装的软件包</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get upgrade &amp;&amp;; apt-get update --fix-missing</span><br></pre></td></tr></table></figure><p>2.安装一些常用的软件包</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install curl wget nano vim busybox iptables iproute2 cpufrequtils</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>3.开机自启动加入</p><p>sudo vi &#x2F;etc&#x2F;rc.local</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">sleep 3</span><br><span class="line">systemctl stop ModemManager</span><br><span class="line">sleep 3</span><br><span class="line">qmicli -d /dev/wwan0qmi0 --uim-sim-power-off=1</span><br><span class="line">sleep 3</span><br><span class="line">qmicli -d /dev/wwan0qmi0 --uim-sim-power-on=1</span><br><span class="line">sleep 3</span><br><span class="line">systemctl start ModemManager</span><br><span class="line">sleep 3</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://md.walmw.club/markdown/biji/image-20230524034605845.png&quot; alt=&quot;image-20230524034605845&quot;&gt;&lt;/p&gt;
+&lt;p&gt;固件刚安装好的时候如果没有modem mmcli</summary>
+      
+    
+    
+    
+    <category term="随身wifi" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    <category term="modem" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/modem/"/>
+    
+    <category term="mmcli -m 0" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/modem/mmcli-m-0/"/>
+    
+    
+    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    <category term="modem" scheme="http://example.com/tags/modem/"/>
+    
+    <category term="mmcli -m 0" scheme="http://example.com/tags/mmcli-m-0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</title>
     <link href="http://example.com/articke/suishenwifi-ufi003-meiwang.html"/>
     <id>http://example.com/articke/suishenwifi-ufi003-meiwang.html</id>
     <published>2023-05-22T03:35:15.000Z</published>
-    <updated>2023-05-22T03:43:57.365Z</updated>
+    <updated>2023-05-22T03:52:58.192Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230522113640295.png" alt="image-20230522113640295"></p><h1 id="解决UFI003刷Debian没网问题-同时支持ipv6-其他系统自测"><a href="#解决UFI003刷Debian没网问题-同时支持ipv6-其他系统自测" class="headerlink" title="解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测"></a>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">刷了UFI003的超频版的Debian插上手机卡不识别,找问题,找了好久找不到,替换了几个文件解决了</span><br></pre></td></tr></table></figure><h4 id="1-将这几个文件替换到你刷机的超频版包里"><a href="#1-将这几个文件替换到你刷机的超频版包里" class="headerlink" title="1.将这几个文件替换到你刷机的超频版包里"></a>1.将这几个文件替换到你刷机的超频版包里</h4><p>包地址:<a href="https://wwvw.lanzouy.com/iPghD0ww53ib">https://wwvw.lanzouy.com/iPghD0ww53ib</a> 密码:bbps</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fsc.bin</span><br><span class="line">fsg.bin</span><br><span class="line">modemst1.bin</span><br><span class="line">modemst2.bin</span><br></pre></td></tr></table></figure><p><img src="https://md.walmw.club/markdown/biji/image-20230522082933596.png" alt="image-20230522082933596"></p><h4 id="2-使用-lt-一键刷入工具-bat-gt-进行正常刷机-然后就有网了"><a href="#2-使用-lt-一键刷入工具-bat-gt-进行正常刷机-然后就有网了" class="headerlink" title="2.使用&lt;一键刷入工具.bat&gt;进行正常刷机,然后就有网了"></a>2.使用&lt;一键刷入工具.bat&gt;进行正常刷机,然后就有网了</h4><p><img src="https://md.walmw.club/markdown/biji/image-20230522082619875.png" alt="image-20230522082619875"></p><p><img src="https://md.walmw.club/markdown/biji/image-20230522082710722.png" alt="image-20230522082710722"></p><p><img src="https://md.walmw.club/markdown/biji/image-20230522082847169.png" alt="image-20230522082847169"></p>]]></content>
     

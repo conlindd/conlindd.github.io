@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>网站整改中.......</title>
+      <link href="//articke/wangzhanzhenggai.html"/>
+      <url>//articke/wangzhanzhenggai.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="网站整改中……"><a href="#网站整改中……" class="headerlink" title="网站整改中……."></a>网站整改中…….</h4><p>经通知本网站需要整改,本月25号以后有结果</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站整改 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站整改 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update</title>
+      <link href="//articke/suishenwifi-meiwangzenmeban.html"/>
+      <url>//articke/suishenwifi-meiwangzenmeban.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://md.walmw.club/markdown/biji/image-20230524034605845.png" alt="image-20230524034605845"></p><p>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update!!!!!!!!!!!!</p><p>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update!!!!!!!!!!!!</p><p>固件刚安装好的时候如果没有modem mmcli -m 0是空 的时候,记得更新下固件 apt-get update!!!!!!!!!!!!</p><p>1.更新和升级系统中已安装的软件包</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get upgrade &amp;&amp;; apt-get update --fix-missing</span><br></pre></td></tr></table></figure><p>2.安装一些常用的软件包</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install curl wget nano vim busybox iptables iproute2 cpufrequtils</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>3.开机自启动加入</p><p>sudo vi &#x2F;etc&#x2F;rc.local</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">sleep 3</span><br><span class="line">systemctl stop ModemManager</span><br><span class="line">sleep 3</span><br><span class="line">qmicli -d /dev/wwan0qmi0 --uim-sim-power-off=1</span><br><span class="line">sleep 3</span><br><span class="line">qmicli -d /dev/wwan0qmi0 --uim-sim-power-on=1</span><br><span class="line">sleep 3</span><br><span class="line">systemctl start ModemManager</span><br><span class="line">sleep 3</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随身wifi </category>
+          
+          <category> modem </category>
+          
+          <category> mmcli -m 0 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随身wifi </tag>
+            
+            <tag> modem </tag>
+            
+            <tag> mmcli -m 0 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决UFI003刷Debian没网问题,同时支持ipv6,其他系统自测</title>
       <link href="//articke/suishenwifi-ufi003-meiwang.html"/>
       <url>//articke/suishenwifi-ufi003-meiwang.html</url>
