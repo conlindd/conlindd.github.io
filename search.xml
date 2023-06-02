@@ -4,6 +4,43 @@
   
     
     <entry>
+      <title>新版随身Wifi 制作ChatGpt语音助手</title>
+      <link href="//articke/xinban-chatgpt-suishenwifi-yinxiang4.html"/>
+      <url>//articke/xinban-chatgpt-suishenwifi-yinxiang4.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="随身Wifi-制作ChatGpt语音助手"><a href="#随身Wifi-制作ChatGpt语音助手" class="headerlink" title="随身Wifi 制作ChatGpt语音助手"></a>随身Wifi 制作ChatGpt语音助手</h1><p><img src="https://s2.loli.net/2023/06/02/CRax1UwiukAtJY7.png" alt="image-20230602201623896"></p><h2 id="0-效果展示"><a href="#0-效果展示" class="headerlink" title="0.效果展示"></a>0.效果展示</h2><h2 id="1-准备硬件材料"><a href="#1-准备硬件材料" class="headerlink" title="1.准备硬件材料"></a>1.准备硬件材料</h2><p>看下边地址:<br><a href="https://jiuhuai.top/articke/chatgpt-suishenwifi-yinxiang0.html">https://jiuhuai.top/articke/chatgpt-suishenwifi-yinxiang0.html</a></p><h2 id="2-准备第三方材料"><a href="#2-准备第三方材料" class="headerlink" title="2.准备第三方材料"></a>2.准备第三方材料</h2><h3 id="1-申请百度语音识别api-key"><a href="#1-申请百度语音识别api-key" class="headerlink" title="1.申请百度语音识别api key"></a>1.申请百度语音识别api key</h3><p>申请地址：<a href="https://developer.baidu.com/">https://developer.baidu.com/</a></p><h3 id="2-申请open-ai-key"><a href="#2-申请open-ai-key" class="headerlink" title="2.申请open ai key"></a>2.申请open ai key</h3><p>申请地址：<a href="https://openai.com/">https://openai.com/</a></p><h3 id="3-申请picovoice语音唤醒词"><a href="#3-申请picovoice语音唤醒词" class="headerlink" title="3.申请picovoice语音唤醒词"></a>3.申请picovoice语音唤醒词</h3><p>申请地址：<a href="https://console.picovoice.ai/">https://console.picovoice.ai/</a></p><h2 id="3-系统环境准备"><a href="#3-系统环境准备" class="headerlink" title="3.系统环境准备"></a>3.系统环境准备</h2><h3 id="1-更新系统"><a href="#1-更新系统" class="headerlink" title="1.更新系统"></a>1.更新系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure><h3 id="2-安装软件"><a href="#2-安装软件" class="headerlink" title="2.安装软件"></a>2.安装软件</h3><h4 id="2-1安装PulseAudio"><a href="#2-1安装PulseAudio" class="headerlink" title="2.1安装PulseAudio"></a>2.1安装PulseAudio</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install pulseaudio</span><br></pre></td></tr></table></figure><p>使用以下命令启动PulseAudio</p><p>让 PulseAudio 守护进程在系统启动时自动启动，请执行以下步骤：</p><p>创建一个名为 pulseaudio.service 的文件，该文件应该位于 &#x2F;etc&#x2F;systemd&#x2F;user&#x2F; 目录下。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">sudo nano /etc/systemd/user/pulseaudio.service</span><br></pre></td></tr></table></figure><p>在文件中输入以下内容：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=PulseAudio Daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/pulseaudio --daemonize=no</span><br><span class="line">Restart=on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=default.target</span><br></pre></td></tr></table></figure><p>保存并关闭文件。</p><p>启用并启动服务：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl --user enable pulseaudio.service</span><br><span class="line">systemctl --user start pulseaudio.service</span><br></pre></td></tr></table></figure><p>现在，PulseAudio 守护进程将在系统启动时自动启动。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><h4 id="2-2开启HUB模式"><a href="#2-2开启HUB模式" class="headerlink" title="2.2开启HUB模式"></a>2.2开启HUB模式</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo host &gt; /sys/kernel/debug/usb/ci_hdrc.0/role</span><br></pre></td></tr></table></figure><h4 id="2-3安装-sox-软件测试录音与播放功能"><a href="#2-3安装-sox-软件测试录音与播放功能" class="headerlink" title="2.3安装 sox 软件测试录音与播放功能"></a>2.3安装 <code>sox</code> 软件测试录音与播放功能</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install sox</span><br></pre></td></tr></table></figure><p>安装完成后运行 <code>sox -d -d</code> 命令，对着麦克风说话，确认可以听到自己的声音。</p><h4 id="2-4安装-python3-和pip-3"><a href="#2-4安装-python3-和pip-3" class="headerlink" title="2.4安装 python3 和pip 3"></a>2.4安装 python3 和pip 3</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install python3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure><h2 id="3-克隆本项目-然后填写相关参数"><a href="#3-克隆本项目-然后填写相关参数" class="headerlink" title="3.克隆本项目,然后填写相关参数"></a>3.克隆本项目,然后填写相关参数</h2><h3 id="3-1克隆项目"><a href="#3-1克隆项目" class="headerlink" title="3.1克隆项目"></a>3.1克隆项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://github.com/conlindd/zimou.git</span><br></pre></td></tr></table></figure><h3 id="3-2填写参数"><a href="#3-2填写参数" class="headerlink" title="3.2填写参数"></a>3.2填写参数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># main方法 开始方法</span><br><span class="line"></span><br><span class="line"># 参数填写</span><br><span class="line">openai_api_key = &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;  # 你的openai key</span><br><span class="line">PICOVOICE_API_KEY = &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;  # 你的picovoice key</span><br><span class="line">keyword_path = &#x27;./speechmodules/xxxxxxxxxxxx-pi_v2_2_0.ppn&#x27;  # 你的唤醒词检测离线文件地址(选树莓派)</span><br><span class="line">Baidu_APP_ID = &#x27;xxxxxx&#x27;  # 你的百度APP_ID</span><br><span class="line">Baidu_API_KEY = &#x27;xxxxxxxx&#x27;  # 你的百度API_KEY</span><br><span class="line">Baidu_SECRET_KEY = &#x27;xxxxxxxxxxxxxxxxx&#x27;  # 你的百度SECRET_KEY</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="4-启动项目"><a href="#4-启动项目" class="headerlink" title="4.启动项目"></a>4.启动项目</h2><h3 id="4-1在项目根目录使用pip安装requirements-txt中的模块"><a href="#4-1在项目根目录使用pip安装requirements-txt中的模块" class="headerlink" title="4.1在项目根目录使用pip安装requirements.txt中的模块"></a>4.1在项目根目录使用pip安装requirements.txt中的模块</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure><h3 id="4-2启动项目"><a href="#4-2启动项目" class="headerlink" title="4.2启动项目"></a>4.2启动项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 main.py</span><br></pre></td></tr></table></figure><h2 id="5-聊天展示"><a href="#5-聊天展示" class="headerlink" title="5.聊天展示"></a>5.聊天展示</h2><p><img src="https://s2.loli.net/2023/06/02/lopYrSVc8tFEG1A.png" alt="image-20230602201132083"></p><p>原作者仓库:<a href="https://github.com/MedalCollector/Orator">https://github.com/MedalCollector/Orator</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ai </category>
+          
+          <category> ChatGpt </category>
+          
+          <category> 随身WiFi </category>
+          
+          <category> 音响 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ChatGpt </tag>
+            
+            <tag> Open Ai </tag>
+            
+            <tag> 随身wifi </tag>
+            
+            <tag> 音响 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>0.ChatGpt随身WiFi智能音箱之准备材料</title>
       <link href="//articke/chatgpt-suishenwifi-yinxiang0.html"/>
       <url>//articke/chatgpt-suishenwifi-yinxiang0.html</url>

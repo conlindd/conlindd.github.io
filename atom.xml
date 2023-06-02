@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-29T04:00:51.258Z</updated>
+  <updated>2023-06-02T12:53:21.598Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新版随身Wifi 制作ChatGpt语音助手</title>
+    <link href="http://example.com/articke/xinban-chatgpt-suishenwifi-yinxiang4.html"/>
+    <id>http://example.com/articke/xinban-chatgpt-suishenwifi-yinxiang4.html</id>
+    <published>2023-06-02T12:53:02.000Z</published>
+    <updated>2023-06-02T12:53:21.598Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="随身Wifi-制作ChatGpt语音助手"><a href="#随身Wifi-制作ChatGpt语音助手" class="headerlink" title="随身Wifi 制作ChatGpt语音助手"></a>随身Wifi 制作ChatGpt语音助手</h1><p><img src="https://s2.loli.net/2023/06/02/CRax1UwiukAtJY7.png" alt="image-20230602201623896"></p><h2 id="0-效果展示"><a href="#0-效果展示" class="headerlink" title="0.效果展示"></a>0.效果展示</h2><h2 id="1-准备硬件材料"><a href="#1-准备硬件材料" class="headerlink" title="1.准备硬件材料"></a>1.准备硬件材料</h2><p>看下边地址:<br><a href="https://jiuhuai.top/articke/chatgpt-suishenwifi-yinxiang0.html">https://jiuhuai.top/articke/chatgpt-suishenwifi-yinxiang0.html</a></p><h2 id="2-准备第三方材料"><a href="#2-准备第三方材料" class="headerlink" title="2.准备第三方材料"></a>2.准备第三方材料</h2><h3 id="1-申请百度语音识别api-key"><a href="#1-申请百度语音识别api-key" class="headerlink" title="1.申请百度语音识别api key"></a>1.申请百度语音识别api key</h3><p>申请地址：<a href="https://developer.baidu.com/">https://developer.baidu.com/</a></p><h3 id="2-申请open-ai-key"><a href="#2-申请open-ai-key" class="headerlink" title="2.申请open ai key"></a>2.申请open ai key</h3><p>申请地址：<a href="https://openai.com/">https://openai.com/</a></p><h3 id="3-申请picovoice语音唤醒词"><a href="#3-申请picovoice语音唤醒词" class="headerlink" title="3.申请picovoice语音唤醒词"></a>3.申请picovoice语音唤醒词</h3><p>申请地址：<a href="https://console.picovoice.ai/">https://console.picovoice.ai/</a></p><h2 id="3-系统环境准备"><a href="#3-系统环境准备" class="headerlink" title="3.系统环境准备"></a>3.系统环境准备</h2><h3 id="1-更新系统"><a href="#1-更新系统" class="headerlink" title="1.更新系统"></a>1.更新系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure><h3 id="2-安装软件"><a href="#2-安装软件" class="headerlink" title="2.安装软件"></a>2.安装软件</h3><h4 id="2-1安装PulseAudio"><a href="#2-1安装PulseAudio" class="headerlink" title="2.1安装PulseAudio"></a>2.1安装PulseAudio</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install pulseaudio</span><br></pre></td></tr></table></figure><p>使用以下命令启动PulseAudio</p><p>让 PulseAudio 守护进程在系统启动时自动启动，请执行以下步骤：</p><p>创建一个名为 pulseaudio.service 的文件，该文件应该位于 &#x2F;etc&#x2F;systemd&#x2F;user&#x2F; 目录下。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">sudo nano /etc/systemd/user/pulseaudio.service</span><br></pre></td></tr></table></figure><p>在文件中输入以下内容：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=PulseAudio Daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/pulseaudio --daemonize=no</span><br><span class="line">Restart=on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=default.target</span><br></pre></td></tr></table></figure><p>保存并关闭文件。</p><p>启用并启动服务：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl --user enable pulseaudio.service</span><br><span class="line">systemctl --user start pulseaudio.service</span><br></pre></td></tr></table></figure><p>现在，PulseAudio 守护进程将在系统启动时自动启动。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><h4 id="2-2开启HUB模式"><a href="#2-2开启HUB模式" class="headerlink" title="2.2开启HUB模式"></a>2.2开启HUB模式</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo host &gt; /sys/kernel/debug/usb/ci_hdrc.0/role</span><br></pre></td></tr></table></figure><h4 id="2-3安装-sox-软件测试录音与播放功能"><a href="#2-3安装-sox-软件测试录音与播放功能" class="headerlink" title="2.3安装 sox 软件测试录音与播放功能"></a>2.3安装 <code>sox</code> 软件测试录音与播放功能</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install sox</span><br></pre></td></tr></table></figure><p>安装完成后运行 <code>sox -d -d</code> 命令，对着麦克风说话，确认可以听到自己的声音。</p><h4 id="2-4安装-python3-和pip-3"><a href="#2-4安装-python3-和pip-3" class="headerlink" title="2.4安装 python3 和pip 3"></a>2.4安装 python3 和pip 3</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install python3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure><h2 id="3-克隆本项目-然后填写相关参数"><a href="#3-克隆本项目-然后填写相关参数" class="headerlink" title="3.克隆本项目,然后填写相关参数"></a>3.克隆本项目,然后填写相关参数</h2><h3 id="3-1克隆项目"><a href="#3-1克隆项目" class="headerlink" title="3.1克隆项目"></a>3.1克隆项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://github.com/conlindd/zimou.git</span><br></pre></td></tr></table></figure><h3 id="3-2填写参数"><a href="#3-2填写参数" class="headerlink" title="3.2填写参数"></a>3.2填写参数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># main方法 开始方法</span><br><span class="line"></span><br><span class="line"># 参数填写</span><br><span class="line">openai_api_key = &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;  # 你的openai key</span><br><span class="line">PICOVOICE_API_KEY = &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;  # 你的picovoice key</span><br><span class="line">keyword_path = &#x27;./speechmodules/xxxxxxxxxxxx-pi_v2_2_0.ppn&#x27;  # 你的唤醒词检测离线文件地址(选树莓派)</span><br><span class="line">Baidu_APP_ID = &#x27;xxxxxx&#x27;  # 你的百度APP_ID</span><br><span class="line">Baidu_API_KEY = &#x27;xxxxxxxx&#x27;  # 你的百度API_KEY</span><br><span class="line">Baidu_SECRET_KEY = &#x27;xxxxxxxxxxxxxxxxx&#x27;  # 你的百度SECRET_KEY</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="4-启动项目"><a href="#4-启动项目" class="headerlink" title="4.启动项目"></a>4.启动项目</h2><h3 id="4-1在项目根目录使用pip安装requirements-txt中的模块"><a href="#4-1在项目根目录使用pip安装requirements-txt中的模块" class="headerlink" title="4.1在项目根目录使用pip安装requirements.txt中的模块"></a>4.1在项目根目录使用pip安装requirements.txt中的模块</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure><h3 id="4-2启动项目"><a href="#4-2启动项目" class="headerlink" title="4.2启动项目"></a>4.2启动项目</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 main.py</span><br></pre></td></tr></table></figure><h2 id="5-聊天展示"><a href="#5-聊天展示" class="headerlink" title="5.聊天展示"></a>5.聊天展示</h2><p><img src="https://s2.loli.net/2023/06/02/lopYrSVc8tFEG1A.png" alt="image-20230602201132083"></p><p>原作者仓库:<a href="https://github.com/MedalCollector/Orator">https://github.com/MedalCollector/Orator</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;随身Wifi-制作ChatGpt语音助手&quot;&gt;&lt;a href=&quot;#随身Wifi-制作ChatGpt语音助手&quot; class=&quot;headerlink&quot; title=&quot;随身Wifi 制作ChatGpt语音助手&quot;&gt;&lt;/a&gt;随身Wifi 制作ChatGpt语音助手&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="ai" scheme="http://example.com/categories/ai/"/>
+    
+    <category term="ChatGpt" scheme="http://example.com/categories/ai/ChatGpt/"/>
+    
+    <category term="随身WiFi" scheme="http://example.com/categories/ai/ChatGpt/%E9%9A%8F%E8%BA%ABWiFi/"/>
+    
+    <category term="音响" scheme="http://example.com/categories/ai/ChatGpt/%E9%9A%8F%E8%BA%ABWiFi/%E9%9F%B3%E5%93%8D/"/>
+    
+    
+    <category term="ChatGpt" scheme="http://example.com/tags/ChatGpt/"/>
+    
+    <category term="Open Ai" scheme="http://example.com/tags/Open-Ai/"/>
+    
+    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
+    
+    <category term="音响" scheme="http://example.com/tags/%E9%9F%B3%E5%93%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>0.ChatGpt随身WiFi智能音箱之准备材料</title>
@@ -615,34 +651,6 @@
     <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="http://example.com/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随身wifi的debian系统下SMTP邮箱收取邮件后自动转发</title>
-    <link href="http://example.com/articke/debian-duanxinzhuanfa.html"/>
-    <id>http://example.com/articke/debian-duanxinzhuanfa.html</id>
-    <published>2023-05-14T20:26:49.000Z</published>
-    <updated>2023-05-27T17:06:52.975Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="随身wifi的debian系统下SMTP邮箱收取邮件后自动转发"><a href="#随身wifi的debian系统下SMTP邮箱收取邮件后自动转发" class="headerlink" title="随身wifi的debian系统下SMTP邮箱收取邮件后自动转发"></a>随身wifi的debian系统下SMTP邮箱收取邮件后自动转发</h1><blockquote><h2 id="Excerpt"><a href="#Excerpt" class="headerlink" title="Excerpt"></a>Excerpt</h2><p>代码来源自GITEE@刘骢和GITHUB@TeddyNight</p><p>source: <a href="https://gitee.com/MaoMaoMaster/autoforwarder/tree/master">https://gitee.com/MaoMaoMaster/autoforwarder/tree/master</a><br>author: 油析猫狸厮</p></blockquote><hr><p>README.md</p><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>代码来源自GITEE@刘骢和GITHUB@TeddyNight</p><h3 id="观前需知"><a href="#观前需知" class="headerlink" title="观前需知"></a>观前需知</h3><p>0.请确认你的设备能上网。</p><p>1.在观看本教程前请拥有一定Linux操作基础，本人不回答关于任何linux操作问题。例如新建目录，文件，移动，剪切是什么命令，不知道请打开菜鸟教程进linux板块学习！</p><p>2.请先确保你的硬件支持短信收取（在安卓系统下）,应该不支持电信的CDMA，只支持联通移动的LTE通信，或者可以先用刘骢的脚本测试下。</p><p>3.除此之外请预先换源，防止apt下载卡住，不知道怎么换多搜索学习。</p><p>本文用到的文件：install.sh，smsforwarder，smsforwarder.service</p><h3 id="大致流程，详情请见酷安"><a href="#大致流程，详情请见酷安" class="headerlink" title="大致流程，详情请见酷安"></a>大致流程，详情请见酷安</h3><p>1.部署环境</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install python3 python3-requests python3-gi python3-dbus</span><br></pre></td></tr></table></figure><p>2.新建目录及文件，并修改成你的信息</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch install.sh,smsforwarder,smsforwarder.service</span><br></pre></td></tr></table></figure><p>可以用nano编辑复制，或下载本仓库的代码再进去修改</p><p>3.赋权</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +777 /etc/systemd/system/smsforwarder.service</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 777 /usr/local/bin/smsforwardr</span><br></pre></td></tr></table></figure><p>4.启动服务</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start smsforwarder</span><br></pre></td></tr></table></figure><h4 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h4><ol><li><p>修改SMTP信息请到smsforwarder文件</p><p>my_sender对应你开启了SMTP的发件邮箱</p><p>my_user对应你收件邮箱</p></li></ol><p>————分界线————<br>启动smsforwarder<br>命令<code>systemctl start smsforwarder</code><br>等待几秒，查看状态<br>命令<code>systemctl status smsforwarder</code><br>看看状态是不是绿色字体的active(running)，如果是黄色或红色字体说明没有开始成功，可能是上面没给到权限造成的。</p><p><img src="https://s2.loli.net/2023/05/28/4yrg8FWh2IvUY1K.png">)</p><p>可以先用命令python3 smsforwarder将py脚本在终端挂起，发短信测试下会不会转发。<br>没有报错能正常转发。<br>那么恭喜你，可以把服务加进自启了！<br><code>systemctl enable smsforwarder</code></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;随身wifi的debian系统下SMTP邮箱收取邮件后自动转发&quot;&gt;&lt;a href=&quot;#随身wifi的debian系统下SMTP邮箱收取邮件后自动转发&quot; class=&quot;headerlink&quot; title=&quot;随身wifi的debian系统下SMTP邮箱收取邮件后自动转</summary>
-      
-    
-    
-    
-    <category term="随身wifi" scheme="http://example.com/categories/%E9%9A%8F%E8%BA%ABwifi/"/>
-    
-    
-    <category term="随身wifi" scheme="http://example.com/tags/%E9%9A%8F%E8%BA%ABwifi/"/>
-    
-    <category term="Debian" scheme="http://example.com/tags/Debian/"/>
-    
-    <category term="短信转发" scheme="http://example.com/tags/%E7%9F%AD%E4%BF%A1%E8%BD%AC%E5%8F%91/"/>
     
   </entry>
   
